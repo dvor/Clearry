@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clearry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-IW-ld0">
+                                <rect key="frame" x="200" y="119" width="200" height="362"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bin-full" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-SM-shb">
+                                        <rect key="frame" x="25" y="0.0" width="150" height="210"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="210" id="Mn3-MM-Dsh"/>
+                                            <constraint firstAttribute="width" constant="150" id="pgL-DB-vzf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4Z-VK-tj6">
+                                        <rect key="frame" x="0.0" y="302" width="200" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="LWX-Gh-LS1"/>
+                                            <constraint firstAttribute="height" constant="60" id="uFg-Sw-lqW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <state key="normal" title="Clear clipboard">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearClipboardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90T-eo-jK1"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cleared!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3j-n6-n2Z">
+                                        <rect key="frame" x="0.0" y="302" width="200" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="E3j-n6-n2Z" firstAttribute="leading" secondItem="d4Z-VK-tj6" secondAttribute="leading" id="13J-pJ-nT9"/>
+                                    <constraint firstItem="aOh-SM-shb" firstAttribute="centerX" secondItem="4QR-IW-ld0" secondAttribute="centerX" id="1hS-Tv-1gi"/>
+                                    <constraint firstItem="E3j-n6-n2Z" firstAttribute="top" secondItem="d4Z-VK-tj6" secondAttribute="top" id="8k1-cW-u1I"/>
+                                    <constraint firstItem="aOh-SM-shb" firstAttribute="top" secondItem="4QR-IW-ld0" secondAttribute="top" id="9Ou-5G-e7o"/>
+                                    <constraint firstItem="E3j-n6-n2Z" firstAttribute="trailing" secondItem="d4Z-VK-tj6" secondAttribute="trailing" id="D4b-Ub-WRj"/>
+                                    <constraint firstItem="E3j-n6-n2Z" firstAttribute="bottom" secondItem="d4Z-VK-tj6" secondAttribute="bottom" id="GrJ-iY-0gb"/>
+                                    <constraint firstAttribute="trailing" secondItem="d4Z-VK-tj6" secondAttribute="trailing" id="Jpc-bF-zvy"/>
+                                    <constraint firstAttribute="bottom" secondItem="d4Z-VK-tj6" secondAttribute="bottom" id="MEd-oB-aJH"/>
+                                    <constraint firstItem="d4Z-VK-tj6" firstAttribute="top" secondItem="aOh-SM-shb" secondAttribute="bottom" constant="92" id="b60-Q2-Lg4"/>
+                                    <constraint firstItem="d4Z-VK-tj6" firstAttribute="leading" secondItem="4QR-IW-ld0" secondAttribute="leading" id="z6X-oG-coF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaE-6Y-J8Y">
+                                <rect key="frame" x="540" y="34" width="40" height="40"/>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEa-F5-lgG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xaE-6Y-J8Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="V9S-sg-3Kh"/>
+                            <constraint firstItem="4QR-IW-ld0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aEK-RA-3GY"/>
+                            <constraint firstItem="4QR-IW-ld0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ee2-FU-ImG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xaE-6Y-J8Y" secondAttribute="trailing" id="gzC-xW-uov"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clearClipboardButton" destination="d4Z-VK-tj6" id="hNn-La-yw2"/>
+                        <outlet property="clearedLabel" destination="E3j-n6-n2Z" id="OyH-7A-zYR"/>
+                        <outlet property="imageView" destination="aOh-SM-shb" id="Cws-Xf-oFY"/>
+                        <outlet property="settingsButton" destination="xaE-6Y-J8Y" id="vto-ew-YrK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="375" y="318"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bin-full" width="150" height="210"/>
+        <image name="settings" width="40" height="40"/>
+    </resources>
 </document>

@@ -12,6 +12,7 @@
 		11BB6ECF1CC7E79100A531A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB6ECD1CC7E79100A531A8 /* Main.storyboard */; };
 		11BB6ED11CC7E79100A531A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BB6ED01CC7E79100A531A8 /* Assets.xcassets */; };
 		11BB6ED41CC7E79100A531A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB6ED21CC7E79100A531A8 /* LaunchScreen.storyboard */; };
+		11BB6EDC1CC7F66D00A531A8 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB6EDB1CC7F66D00A531A8 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		11BB6ED01CC7E79100A531A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11BB6ED31CC7E79100A531A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11BB6ED51CC7E79100A531A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BB6EDB1CC7F66D00A531A8 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				11BB6EC91CC7E79100A531A8 /* AppDelegate.swift */,
 				11BB6ECB1CC7E79100A531A8 /* ViewController.swift */,
+				11BB6EDB1CC7F66D00A531A8 /* UIImageExtension.swift */,
 				11BB6ECD1CC7E79100A531A8 /* Main.storyboard */,
 				11BB6ED01CC7E79100A531A8 /* Assets.xcassets */,
 				11BB6ED21CC7E79100A531A8 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				11BB6ECC1CC7E79100A531A8 /* ViewController.swift in Sources */,
 				11BB6ECA1CC7E79100A531A8 /* AppDelegate.swift in Sources */,
+				11BB6EDC1CC7F66D00A531A8 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
