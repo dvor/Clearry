@@ -49,6 +49,10 @@ class ViewController: UIViewController {
         switchToActualState()
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
     @IBAction func settingsButtonPressed(sender: AnyObject) {
     }
 
