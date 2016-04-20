@@ -16,15 +16,54 @@ private struct Constants {
     static let AnimationDuration = 0.15
 }
 
+private enum State {
+    case Full
+    case Empty
+    case Cleared
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var clearClipboardButton: UIButton!
     @IBOutlet weak var clearedLabel: UILabel!
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        NSNotificationCenter.defaultCenter().addObserver(
+                self,
+                selector: #selector(ViewController.willEnterForegroundNotification),
+                name: UIApplicationWillEnterForegroundNotification,
+                object: nil)
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViews()
+        switchToActualState()
+    }
+
+    @IBAction func settingsButtonPressed(sender: AnyObject) {
+    }
+
+    @IBAction func clearClipboardButtonPressed(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().items = [AnyObject]()
+        switchToState(.Cleared, animated: true)
+    }
+
+    func willEnterForegroundNotification() {
+        switchToActualState()
+    }
+}
+
+private extension ViewController {
+    func setupViews() {
         let settingsImage = settingsButton.imageForState(.Normal)!.imageWithRenderingMode(.AlwaysTemplate)
         settingsButton.setImage(settingsImage, forState: .Normal)
         settingsButton.tintColor = Constants.MainColor
@@ -43,20 +82,51 @@ class ViewController: UIViewController {
         clearedLabel.textColor = Constants.LabelColor
     }
 
-    @IBAction func settingsButtonPressed(sender: AnyObject) {
+    func switchToActualState() {
+        if UIPasteboard.generalPasteboard().items.count > 0 {
+            switchToState(.Full, animated: false)
+        }
+        else {
+            switchToState(.Empty, animated: false)
+        }
     }
 
-    @IBAction func clearClipboardButtonPressed(sender: AnyObject) {
-        UIView.animateWithDuration(Constants.AnimationDuration) { [unowned self] in
-            self.clearClipboardButton.alpha = 0.0
-            self.clearedLabel.alpha = 1.0
+    func switchToState(state: State, animated: Bool) {
+        let buttonAlpha: CGFloat
+        let labelAlpha: CGFloat
+
+        switch state {
+            case .Full:
+                buttonAlpha = 1.0
+                labelAlpha = 0.0
+                imageView.image = UIImage(named: "bin-full")!.imageWithRenderingMode(.AlwaysTemplate)
+            case .Empty:
+                buttonAlpha = 0.0
+                labelAlpha = 1.0
+                imageView.image = UIImage(named: "bin-empty")!.imageWithRenderingMode(.AlwaysTemplate)
+                clearedLabel.text = "Clipboard is empty"
+            case .Cleared:
+                buttonAlpha = 0.0
+                labelAlpha = 1.0
+                imageView.image = UIImage(named: "bin-empty")!.imageWithRenderingMode(.AlwaysTemplate)
+                clearedLabel.text = "Cleared!"
         }
 
-        self.imageView.image = UIImage(named: "bin-empty")!.imageWithRenderingMode(.AlwaysTemplate)
+        func closure() {
+            clearClipboardButton.alpha = buttonAlpha
+            clearedLabel.alpha = labelAlpha
+        }
 
-        let transition = CATransition()
-        transition.duration = Constants.AnimationDuration
-        transition.type = kCATransitionFade
-        imageView.layer.addAnimation(transition, forKey: nil)
+        if animated {
+            UIView.animateWithDuration(Constants.AnimationDuration, animations: closure)
+
+            let transition = CATransition()
+            transition.duration = Constants.AnimationDuration
+            transition.type = kCATransitionFade
+            imageView.layer.addAnimation(transition, forKey: nil)
+        }
+        else {
+            closure()
+        }
     }
 }
