@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116E8ADF1CC82AEE00A11E01 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8ADE1CC82AEE00A11E01 /* SettingsController.swift */; };
+		116E8AE11CC834FE00A11E01 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8AE01CC834FE00A11E01 /* UIColorExtension.swift */; };
+		116E8AE31CC8365A00A11E01 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8AE21CC8365A00A11E01 /* UserDefaults.swift */; };
 		11BB6ECA1CC7E79100A531A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB6EC91CC7E79100A531A8 /* AppDelegate.swift */; };
 		11BB6ECC1CC7E79100A531A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB6ECB1CC7E79100A531A8 /* ViewController.swift */; };
 		11BB6ECF1CC7E79100A531A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB6ECD1CC7E79100A531A8 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116E8ADE1CC82AEE00A11E01 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		116E8AE01CC834FE00A11E01 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		116E8AE21CC8365A00A11E01 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		11BB6EC61CC7E79100A531A8 /* Clearry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clearry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BB6EC91CC7E79100A531A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11BB6ECB1CC7E79100A531A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +64,10 @@
 			children = (
 				11BB6EC91CC7E79100A531A8 /* AppDelegate.swift */,
 				11BB6ECB1CC7E79100A531A8 /* ViewController.swift */,
+				116E8ADE1CC82AEE00A11E01 /* SettingsController.swift */,
 				11BB6EDB1CC7F66D00A531A8 /* UIImageExtension.swift */,
+				116E8AE01CC834FE00A11E01 /* UIColorExtension.swift */,
+				116E8AE21CC8365A00A11E01 /* UserDefaults.swift */,
 				11BB6ECD1CC7E79100A531A8 /* Main.storyboard */,
 				11BB6ED01CC7E79100A531A8 /* Assets.xcassets */,
 				11BB6ED21CC7E79100A531A8 /* LaunchScreen.storyboard */,
@@ -139,7 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116E8ADF1CC82AEE00A11E01 /* SettingsController.swift in Sources */,
 				11BB6ECC1CC7E79100A531A8 /* ViewController.swift in Sources */,
+				116E8AE31CC8365A00A11E01 /* UserDefaults.swift in Sources */,
+				116E8AE11CC834FE00A11E01 /* UIColorExtension.swift in Sources */,
 				11BB6ECA1CC7E79100A531A8 /* AppDelegate.swift in Sources */,
 				11BB6EDC1CC7F66D00A531A8 /* UIImageExtension.swift in Sources */,
 			);

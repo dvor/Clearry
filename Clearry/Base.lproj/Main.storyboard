@@ -62,11 +62,11 @@
                                     <constraint firstItem="d4Z-VK-tj6" firstAttribute="leading" secondItem="4QR-IW-ld0" secondAttribute="leading" id="z6X-oG-coF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaE-6Y-J8Y">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaE-6Y-J8Y">
                                 <rect key="frame" x="540" y="34" width="40" height="40"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
-                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEa-F5-lgG"/>
+                                    <segue destination="uBR-B4-agQ" kind="presentation" id="oUW-Cj-jf3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,6 +78,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xaE-6Y-J8Y" secondAttribute="trailing" id="gzC-xW-uov"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FUb-qs-hSx"/>
                     <connections>
                         <outlet property="clearClipboardButton" destination="d4Z-VK-tj6" id="hNn-La-yw2"/>
                         <outlet property="clearedLabel" destination="E3j-n6-n2Z" id="OyH-7A-zYR"/>
@@ -88,6 +89,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="318"/>
+        </scene>
+        <!--Settings Controller-->
+        <scene sceneID="4OW-e5-YG6">
+            <objects>
+                <viewController id="Jrl-EA-tWo" customClass="SettingsController" customModule="Clearry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eTm-ST-8aq"/>
+                        <viewControllerLayoutGuide type="bottom" id="ILC-U0-RAO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="igt-er-te7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TmY-26-gWv">
+                                <rect key="frame" x="531" y="80" width="51" height="31"/>
+                                <connections>
+                                    <action selector="automaticallyCleanSwitchChanged:" destination="Jrl-EA-tWo" eventType="valueChanged" id="iRL-8h-WmG"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clean automatically" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY4-84-2E4">
+                                <rect key="frame" x="20" y="84" width="167" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically clean clipboard when Clearry becomes active." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2n-zC-2Nm">
+                                <rect key="frame" x="20" y="119" width="501" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpA-CP-29k">
+                                <rect key="frame" x="20" y="560.5" width="560" height="29"/>
+                                <string key="text">Thanks to http://www.flaticon.com for used icons. Icons made by Freepik (http://www.freepik.com) and Gregor Cresnar (http://www.flaticon.com/authors/gregor-cresnar).</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TmY-26-gWv" secondAttribute="trailing" id="6cb-Wa-2o4"/>
+                            <constraint firstItem="VpA-CP-29k" firstAttribute="leading" secondItem="igt-er-te7" secondAttribute="leadingMargin" id="9Tu-7r-LMV"/>
+                            <constraint firstItem="ILC-U0-RAO" firstAttribute="top" secondItem="VpA-CP-29k" secondAttribute="bottom" constant="10" id="C6U-lR-vp6"/>
+                            <constraint firstItem="RY4-84-2E4" firstAttribute="top" secondItem="eTm-ST-8aq" secondAttribute="bottom" constant="20" id="HUc-58-uEy"/>
+                            <constraint firstItem="s2n-zC-2Nm" firstAttribute="leading" secondItem="RY4-84-2E4" secondAttribute="leading" id="X0x-Z1-dfW"/>
+                            <constraint firstItem="TmY-26-gWv" firstAttribute="centerY" secondItem="RY4-84-2E4" secondAttribute="centerY" id="YBw-k4-5aI"/>
+                            <constraint firstItem="s2n-zC-2Nm" firstAttribute="top" secondItem="RY4-84-2E4" secondAttribute="bottom" constant="12" id="ZIb-eh-ufs"/>
+                            <constraint firstItem="s2n-zC-2Nm" firstAttribute="trailing" secondItem="TmY-26-gWv" secondAttribute="leading" constant="-10" id="djM-Fh-h5j"/>
+                            <constraint firstItem="TmY-26-gWv" firstAttribute="leading" relation="lessThanOrEqual" secondItem="RY4-84-2E4" secondAttribute="trailing" constant="362" id="hed-Mt-LNH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VpA-CP-29k" secondAttribute="trailing" id="oow-zE-CSS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="RY4-84-2E4" secondAttribute="leading" id="w2e-PW-gha"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QtA-2Q-b7b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rFm-XG-fKQ">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Jrl-EA-tWo" id="OEJ-CD-esL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="automaticallyCleanSwitch" destination="TmY-26-gWv" id="bAa-Z1-yVc"/>
+                        <outlet property="doneButton" destination="rFm-XG-fKQ" id="gzB-FD-sav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VnI-ZY-H78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="1275"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b15-Yv-fjl">
+            <objects>
+                <navigationController id="uBR-B4-agQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZX1-qQ-Jfk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Jrl-EA-tWo" kind="relationship" relationship="rootViewController" id="r02-1m-zD4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWC-IT-Qtc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360" y="1275"/>
         </scene>
     </scenes>
     <resources>
