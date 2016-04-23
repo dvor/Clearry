@@ -10,6 +10,11 @@
 		116E8ADF1CC82AEE00A11E01 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8ADE1CC82AEE00A11E01 /* SettingsController.swift */; };
 		116E8AE11CC834FE00A11E01 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8AE01CC834FE00A11E01 /* UIColorExtension.swift */; };
 		116E8AE31CC8365A00A11E01 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8AE21CC8365A00A11E01 /* UserDefaults.swift */; };
+		116E8B031CCA9CF100A11E01 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116E8B021CCA9CF100A11E01 /* NotificationCenter.framework */; };
+		116E8B061CCA9CF100A11E01 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8B051CCA9CF100A11E01 /* TodayViewController.swift */; };
+		116E8B091CCA9CF100A11E01 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116E8B071CCA9CF100A11E01 /* MainInterface.storyboard */; };
+		116E8B0D1CCA9CF100A11E01 /* Clearry.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 116E8B001CCA9CF100A11E01 /* Clearry.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		116E8B121CCB645900A11E01 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E8AE01CC834FE00A11E01 /* UIColorExtension.swift */; };
 		11BB6ECA1CC7E79100A531A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB6EC91CC7E79100A531A8 /* AppDelegate.swift */; };
 		11BB6ECC1CC7E79100A531A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB6ECB1CC7E79100A531A8 /* ViewController.swift */; };
 		11BB6ECF1CC7E79100A531A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB6ECD1CC7E79100A531A8 /* Main.storyboard */; };
@@ -18,10 +23,39 @@
 		11BB6EDC1CC7F66D00A531A8 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB6EDB1CC7F66D00A531A8 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		116E8B0B1CCA9CF100A11E01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11BB6EBE1CC7E79100A531A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 116E8AFF1CCA9CF100A11E01;
+			remoteInfo = TodayClearryExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		116E8B111CCA9CF100A11E01 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				116E8B0D1CCA9CF100A11E01 /* Clearry.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		116E8ADE1CC82AEE00A11E01 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		116E8AE01CC834FE00A11E01 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		116E8AE21CC8365A00A11E01 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		116E8B001CCA9CF100A11E01 /* Clearry.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Clearry.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		116E8B021CCA9CF100A11E01 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		116E8B051CCA9CF100A11E01 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		116E8B081CCA9CF100A11E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		116E8B0A1CCA9CF100A11E01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11BB6EC61CC7E79100A531A8 /* Clearry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clearry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BB6EC91CC7E79100A531A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11BB6ECB1CC7E79100A531A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +67,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		116E8AFD1CCA9CF100A11E01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				116E8B031CCA9CF100A11E01 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11BB6EC31CC7E79100A531A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,10 +85,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116E8B011CCA9CF100A11E01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				116E8B021CCA9CF100A11E01 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		116E8B041CCA9CF100A11E01 /* TodayClearryExtension */ = {
+			isa = PBXGroup;
+			children = (
+				116E8B051CCA9CF100A11E01 /* TodayViewController.swift */,
+				116E8B071CCA9CF100A11E01 /* MainInterface.storyboard */,
+				116E8B0A1CCA9CF100A11E01 /* Info.plist */,
+			);
+			path = TodayClearryExtension;
+			sourceTree = "<group>";
+		};
 		11BB6EBD1CC7E79100A531A8 = {
 			isa = PBXGroup;
 			children = (
 				11BB6EC81CC7E79100A531A8 /* Clearry */,
+				116E8B041CCA9CF100A11E01 /* TodayClearryExtension */,
+				116E8B011CCA9CF100A11E01 /* Frameworks */,
 				11BB6EC71CC7E79100A531A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				11BB6EC61CC7E79100A531A8 /* Clearry.app */,
+				116E8B001CCA9CF100A11E01 /* Clearry.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +142,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		116E8AFF1CCA9CF100A11E01 /* TodayClearryExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 116E8B0E1CCA9CF100A11E01 /* Build configuration list for PBXNativeTarget "TodayClearryExtension" */;
+			buildPhases = (
+				116E8AFC1CCA9CF100A11E01 /* Sources */,
+				116E8AFD1CCA9CF100A11E01 /* Frameworks */,
+				116E8AFE1CCA9CF100A11E01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayClearryExtension;
+			productName = TodayClearryExtension;
+			productReference = 116E8B001CCA9CF100A11E01 /* Clearry.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		11BB6EC51CC7E79100A531A8 /* Clearry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11BB6ED81CC7E79100A531A8 /* Build configuration list for PBXNativeTarget "Clearry" */;
@@ -86,10 +166,12 @@
 				11BB6EC21CC7E79100A531A8 /* Sources */,
 				11BB6EC31CC7E79100A531A8 /* Frameworks */,
 				11BB6EC41CC7E79100A531A8 /* Resources */,
+				116E8B111CCA9CF100A11E01 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				116E8B0C1CCA9CF100A11E01 /* PBXTargetDependency */,
 			);
 			name = Clearry;
 			productName = Clearry;
@@ -106,9 +188,23 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = dvor;
 				TargetAttributes = {
+					116E8AFF1CCA9CF100A11E01 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NHVF8NSG3J;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					11BB6EC51CC7E79100A531A8 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = NHVF8NSG3J;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -126,11 +222,20 @@
 			projectRoot = "";
 			targets = (
 				11BB6EC51CC7E79100A531A8 /* Clearry */,
+				116E8AFF1CCA9CF100A11E01 /* TodayClearryExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		116E8AFE1CCA9CF100A11E01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				116E8B091CCA9CF100A11E01 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11BB6EC41CC7E79100A531A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +249,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		116E8AFC1CCA9CF100A11E01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				116E8B061CCA9CF100A11E01 /* TodayViewController.swift in Sources */,
+				116E8B121CCB645900A11E01 /* UIColorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11BB6EC21CC7E79100A531A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,7 +273,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		116E8B0C1CCA9CF100A11E01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 116E8AFF1CCA9CF100A11E01 /* TodayClearryExtension */;
+			targetProxy = 116E8B0B1CCA9CF100A11E01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		116E8B071CCA9CF100A11E01 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				116E8B081CCA9CF100A11E01 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		11BB6ECD1CC7E79100A531A8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -179,6 +309,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		116E8B0F1CCA9CF100A11E01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = TodayClearryExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.Clearry.TodayClearryExtension;
+				PRODUCT_NAME = Clearry;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		116E8B101CCA9CF100A11E01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = TodayClearryExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.Clearry.TodayClearryExtension;
+				PRODUCT_NAME = Clearry;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		11BB6ED61CC7E79100A531A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -268,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Clearry/Info.plist;
@@ -283,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Clearry/Info.plist;
@@ -297,6 +457,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		116E8B0E1CCA9CF100A11E01 /* Build configuration list for PBXNativeTarget "TodayClearryExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				116E8B0F1CCA9CF100A11E01 /* Debug */,
+				116E8B101CCA9CF100A11E01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		11BB6EC11CC7E79100A531A8 /* Build configuration list for PBXProject "Clearry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
