@@ -1,5 +1,7 @@
 Small iOS app for clearing clipboard.
 
+![](https://i.imgur.com/QXOIczB.png)
+
 ## Contact
 
 [d@dvor.me](mailto:d@dvor.me?subject=Clearry)
