@@ -191,6 +191,7 @@
 					116E8AFF1CCA9CF100A11E01 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = NHVF8NSG3J;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -200,6 +201,7 @@
 					11BB6EC51CC7E79100A531A8 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = NHVF8NSG3J;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -320,6 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.Clearry.TodayClearryExtension;
 				PRODUCT_NAME = Clearry;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -334,6 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.Clearry.TodayClearryExtension;
 				PRODUCT_NAME = Clearry;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -434,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.Clearry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -450,6 +455,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.Clearry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

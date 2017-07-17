@@ -11,10 +11,10 @@ import Foundation
 class UserDefaults {
     var automaticallyClean: Bool {
         get {
-            return boolForKey(Keys.AutomaticallyClean.rawValue, defaultValue: false)
+            return bool(for: Keys.AutomaticallyClean.rawValue, defaultValue: false)
         }
         set {
-            setBool(newValue, forKey: Keys.AutomaticallyClean.rawValue)
+            set(bool: newValue, for: Keys.AutomaticallyClean.rawValue)
         }
     }
 }
@@ -24,17 +24,17 @@ private extension UserDefaults {
         case AutomaticallyClean
     }
 
-    func setBool(value: Bool, forKey key: String) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(value, forKey: key)
+    func set(bool value: Bool, for key: String) {
+        let defaults = Foundation.UserDefaults.standard
+        defaults.set(value, forKey: key)
         defaults.synchronize()
     }
 
-    func boolForKey(key: String, defaultValue: Bool) -> Bool {
-        let defaults = NSUserDefaults.standardUserDefaults()
+    func bool(for key: String, defaultValue: Bool) -> Bool {
+        let defaults = Foundation.UserDefaults.standard
 
-        if let result = defaults.objectForKey(key) {
-            return result.boolValue
+        if let result = defaults.object(forKey: key) {
+            return (result as AnyObject).boolValue
         }
         else {
             return defaultValue

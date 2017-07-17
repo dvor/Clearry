@@ -16,7 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         clearButton.tintColor = UIColor.mainColor()
 
         updateUI()
@@ -27,28 +27,28 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         preferredContentSize.height = max(label.frame.size.height, clearButton.frame.size.height)
     }
 
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         updateUI()
-        completionHandler(NCUpdateResult.NewData)
+        completionHandler(NCUpdateResult.newData)
     }
 
-    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsets(top: 5.0, left: 0.0, bottom: 5.0, right: 0.0)
     }
 
-    @IBAction func clearButtonPressed(sender: AnyObject) {
-        UIPasteboard.generalPasteboard().items = [AnyObject]()
+    @IBAction func clearButtonPressed(_ sender: AnyObject) {
+        UIPasteboard.general.items = [AnyObject]() as! [[String : Any]]
 
         label.text = "Cleared!"
-        label.hidden = false
-        clearButton.hidden = true
+        label.isHidden = false
+        clearButton.isHidden = true
     }
 
     func updateUI() {
-        let isEmpty = UIPasteboard.generalPasteboard().items.count == 0
+        let isEmpty = UIPasteboard.general.items.count == 0
 
         label.text = "Clipboard is empty"
-        label.hidden = !isEmpty
-        clearButton.hidden = isEmpty
+        label.isHidden = !isEmpty
+        clearButton.isHidden = isEmpty
     }
 }

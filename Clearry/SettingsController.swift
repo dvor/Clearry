@@ -18,16 +18,16 @@ class SettingsController: UIViewController {
         setupViews()
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 
-    @IBAction func doneButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func automaticallyCleanSwitchChanged(sender: AnyObject) {
-        UserDefaults().automaticallyClean = automaticallyCleanSwitch.on
+    @IBAction func automaticallyCleanSwitchChanged(_ sender: AnyObject) {
+        UserDefaults().automaticallyClean = automaticallyCleanSwitch.isOn
     }
 }
 
@@ -36,6 +36,6 @@ private extension SettingsController {
         doneButton.tintColor = UIColor.mainColor()
 
         automaticallyCleanSwitch.onTintColor = UIColor.mainColor()
-        automaticallyCleanSwitch.on = UserDefaults().automaticallyClean
+        automaticallyCleanSwitch.isOn = UserDefaults().automaticallyClean
     }
 }

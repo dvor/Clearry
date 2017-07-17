@@ -14,9 +14,9 @@ private struct Constants {
 }
 
 private enum State {
-    case Full
-    case Empty
-    case Cleared
+    case full
+    case empty
+    case cleared
 }
 
 class ViewController: UIViewController {
@@ -28,15 +28,15 @@ class ViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
                 self,
                 selector: #selector(ViewController.willEnterForegroundNotification),
-                name: UIApplicationWillEnterForegroundNotification,
+                name: NSNotification.Name.UIApplicationWillEnterForeground,
                 object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func viewDidLoad() {
@@ -46,11 +46,11 @@ class ViewController: UIViewController {
         clearIfNeededAndUpdateUI()
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 
-    @IBAction func clearClipboardButtonPressed(sender: AnyObject) {
+    @IBAction func clearClipboardButtonPressed(_ sender: AnyObject) {
         clearPasteboardAnimated(true)
     }
 
@@ -61,17 +61,17 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     func setupViews() {
-        let settingsImage = settingsButton.imageForState(.Normal)!.imageWithRenderingMode(.AlwaysTemplate)
-        settingsButton.setImage(settingsImage, forState: .Normal)
+        let settingsImage = settingsButton.image(for: UIControlState())!.withRenderingMode(.alwaysTemplate)
+        settingsButton.setImage(settingsImage, for: UIControlState())
         settingsButton.tintColor = UIColor.mainColor()
 
-        imageView.image = UIImage(named: "bin-full")!.imageWithRenderingMode(.AlwaysTemplate)
+        imageView.image = UIImage(named: "bin-full")!.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = UIColor.recycleBinColor()
 
-        let image = UIImage.imageWithColor(UIColor.mainColor(), size: CGSize(width: 1, height: 1))
+        let image = UIImage.image(with: UIColor.mainColor(), size: CGSize(width: 1, height: 1))
 
-        clearClipboardButton.setBackgroundImage(image, forState: .Normal)
-        clearClipboardButton.setTitleColor(.whiteColor(), forState: .Normal)
+        clearClipboardButton.setBackgroundImage(image, for: UIControlState())
+        clearClipboardButton.setTitleColor(.white, for: UIControlState())
         clearClipboardButton.layer.cornerRadius = 8.0
         clearClipboardButton.layer.masksToBounds = true
 
@@ -80,42 +80,42 @@ private extension ViewController {
     }
 
     func clearIfNeededAndUpdateUI() {
-        let items = UIPasteboard.generalPasteboard().items.count
+        let items = UIPasteboard.general.items.count
         let autoClean = UserDefaults().automaticallyClean
 
         switch (items, autoClean) {
             case (let items, _) where items == 0:
-                switchToState(.Empty, animated: false)
+                switchToState(.empty, animated: false)
             case (_, true):
                 clearPasteboardAnimated(false)
             case (_, false):
-                switchToState(.Full, animated: false)
+                switchToState(.full, animated: false)
         }
     }
 
-    func clearPasteboardAnimated(animated: Bool) {
-        UIPasteboard.generalPasteboard().items = [AnyObject]()
-        switchToState(.Cleared, animated: animated)
+    func clearPasteboardAnimated(_ animated: Bool) {
+        UIPasteboard.general.items = [AnyObject]() as! [[String : Any]]
+        switchToState(.cleared, animated: animated)
     }
 
-    func switchToState(state: State, animated: Bool) {
+    func switchToState(_ state: State, animated: Bool) {
         let buttonAlpha: CGFloat
         let labelAlpha: CGFloat
 
         switch state {
-            case .Full:
+            case .full:
                 buttonAlpha = 1.0
                 labelAlpha = 0.0
-                imageView.image = UIImage(named: "bin-full")!.imageWithRenderingMode(.AlwaysTemplate)
-            case .Empty:
+                imageView.image = UIImage(named: "bin-full")!.withRenderingMode(.alwaysTemplate)
+            case .empty:
                 buttonAlpha = 0.0
                 labelAlpha = 1.0
-                imageView.image = UIImage(named: "bin-empty")!.imageWithRenderingMode(.AlwaysTemplate)
+                imageView.image = UIImage(named: "bin-empty")!.withRenderingMode(.alwaysTemplate)
                 clearedLabel.text = "Clipboard is empty"
-            case .Cleared:
+            case .cleared:
                 buttonAlpha = 0.0
                 labelAlpha = 1.0
-                imageView.image = UIImage(named: "bin-empty")!.imageWithRenderingMode(.AlwaysTemplate)
+                imageView.image = UIImage(named: "bin-empty")!.withRenderingMode(.alwaysTemplate)
                 clearedLabel.text = "Cleared!"
         }
 
@@ -125,12 +125,12 @@ private extension ViewController {
         }
 
         if animated {
-            UIView.animateWithDuration(Constants.AnimationDuration, animations: closure)
+            UIView.animate(withDuration: Constants.AnimationDuration, animations: closure)
 
             let transition = CATransition()
             transition.duration = Constants.AnimationDuration
             transition.type = kCATransitionFade
-            imageView.layer.addAnimation(transition, forKey: nil)
+            imageView.layer.add(transition, forKey: nil)
         }
         else {
             closure()
