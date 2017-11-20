@@ -18,10 +18,6 @@ class SettingsController: UIViewController {
         setupViews()
     }
 
-    override var prefersStatusBarHidden : Bool {
-        return true
-    }
-
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }

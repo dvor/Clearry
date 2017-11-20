@@ -46,10 +46,6 @@ class ViewController: UIViewController {
         clearIfNeededAndUpdateUI()
     }
 
-    override var prefersStatusBarHidden : Bool {
-        return true
-    }
-
     @IBAction func clearClipboardButtonPressed(_ sender: AnyObject) {
         clearPasteboardAnimated(true)
     }
