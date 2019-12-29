@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(
                 self,
                 selector: #selector(ViewController.willEnterForegroundNotification),
-                name: NSNotification.Name.UIApplicationWillEnterForeground,
+                name: UIApplication.willEnterForegroundNotification,
                 object: nil)
     }
 
@@ -50,15 +50,15 @@ class ViewController: UIViewController {
         clearPasteboardAnimated(true)
     }
 
-    func willEnterForegroundNotification() {
+    @objc func willEnterForegroundNotification() {
         clearIfNeededAndUpdateUI()
     }
 }
 
 private extension ViewController {
     func setupViews() {
-        let settingsImage = settingsButton.image(for: UIControlState())!.withRenderingMode(.alwaysTemplate)
-        settingsButton.setImage(settingsImage, for: UIControlState())
+        let settingsImage = settingsButton.image(for: UIControl.State())!.withRenderingMode(.alwaysTemplate)
+        settingsButton.setImage(settingsImage, for: UIControl.State())
         settingsButton.tintColor = UIColor.mainColor()
 
         imageView.image = UIImage(named: "bin-full")!.withRenderingMode(.alwaysTemplate)
@@ -66,8 +66,8 @@ private extension ViewController {
 
         let image = UIImage.image(with: UIColor.mainColor(), size: CGSize(width: 1, height: 1))
 
-        clearClipboardButton.setBackgroundImage(image, for: UIControlState())
-        clearClipboardButton.setTitleColor(.white, for: UIControlState())
+        clearClipboardButton.setBackgroundImage(image, for: UIControl.State())
+        clearClipboardButton.setTitleColor(.white, for: UIControl.State())
         clearClipboardButton.layer.cornerRadius = 8.0
         clearClipboardButton.layer.masksToBounds = true
 
@@ -125,7 +125,7 @@ private extension ViewController {
 
             let transition = CATransition()
             transition.duration = Constants.AnimationDuration
-            transition.type = kCATransitionFade
+            transition.type = CATransitionType.fade
             imageView.layer.add(transition, forKey: nil)
         }
         else {
