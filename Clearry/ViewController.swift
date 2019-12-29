@@ -67,7 +67,7 @@ private extension ViewController {
         let image = UIImage.image(with: UIColor.mainColor(), size: CGSize(width: 1, height: 1))
 
         clearClipboardButton.setBackgroundImage(image, for: UIControl.State())
-        clearClipboardButton.setTitleColor(.white, for: UIControl.State())
+        clearClipboardButton.setTitleColor(.systemBackground, for: UIControl.State())
         clearClipboardButton.layer.cornerRadius = 8.0
         clearClipboardButton.layer.masksToBounds = true
 

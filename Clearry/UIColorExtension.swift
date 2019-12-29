@@ -10,14 +10,14 @@ import UIKit
 
 extension UIColor {
     class func mainColor() -> UIColor {
-        return UIColor(red: 255.0 / 255.0, green: 193.0 / 255.0, blue: 7.0 / 255.0, alpha: 1.0)
+        return UIColor.systemYellow
     }
 
     class func secondaryColor() -> UIColor {
-        return UIColor(white: 80.0 / 255.0, alpha: 1.0)
+        return UIColor.systemGray
     }
 
     class func recycleBinColor() -> UIColor {
-        return UIColor(white: 139.0 / 255.0, alpha: 0.3)
+        return UIColor.systemGray4
     }
 }
